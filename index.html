@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript Data Visualization</title>
+    <!-- CSS Styling Start -->
+    <style media="screen">
+      * {
+        /* border: dotted 1px grey;
+        padding: 10px;
+        margin: 10px; */
+      }
+
+      body {
+        border: solid 0px red;
+      }
+
+      nav {
+        border: solid 0px red;
+      }
+
+      a {
+        border: solid 0px red;
+      }
+
+      nav a {
+        border: solid 0px red;
+      }
+
+      #page-heading {
+        border: solid 0px red;
+      }
+
+      .hyperlink-demo,
+      .js-interaction-demo {
+        background: #cccccc;
+        padding: 20px;
+      }
+
+      article {
+        border: solid 0px red;
+        margin-bottom: 10px;
+      }
+
+      .featured {
+        border: solid 0px red;
+        margin-bottom: 10px;
+      }
+
+      .top {
+        border: solid 0px red;
+        margin-bottom: 10px;
+      }
+
+      article div {
+        border: solid 1px red;
+      }
+
+      article div {
+        border: solid 0px red;
+      }
+
+      article div span {
+        border: solid 0px red;
+      }
+
+      .top div span {
+        border: solid 0px red;
+      }
+
+      footer {
+        border: solid 0px red;
+        text-align: center;
+      }
+
+      #lucky-number {
+        font-size: 500%;
+        color: orange;
+        border: solid px tomato;
+      }
+    </style>
+    <!-- CSS Styling Ends -->
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      |
+      <a href="./js_syntax.html">JavaScript Syntax</a>
+      |
+      <a href="./apache_echarts_demo.html">Apache eCharts demo 1</a>
+      |
+      <a href="./apache_echarts_demo_2.html"
+        >Apache eCharts demo 2 (Dynamic Data)</a
+      >
+      |
+      <a href="./google_charts_demo.html">Google Charts demo</a>
+    </nav>
+
+    <h1 id="page-heading">Web Triangle - HTML, CSS and JavaScript</h1>
+    <hr />
+    <p class="description">
+      This simple page includes the minimal level of HTML, CSS and JavaScript to
+      showcase the interaction among these three critial components of modern
+      websites
+    </p>
+
+    <div class="hyperlink-demo">
+      <h2>Hyper Link Demo</h2>
+      go to <a href="https://www.google.com">Google</a>
+    </div>
+
+    <article class="featured top">
+      <h2>Article One Here (top and featured)</h2>
+      <div><em>by:</em> <span>Peter</span></div>
+      <div><em>date:</em> <span>5th Oct</span></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+        culpa suscipit sed laborum maiores consectetur ad vel facilis quis et
+        beatae incidunt enim perferendis id dolor, quia laudantium hic! dolor
+        sit amet consectetur adipisicing elit. Iure, quis et non doloremque
+        totam hic deleniti aliquam consectetur? Laboriosam harum iusto dolor
+        doloribus ratione, ipsam similique tempora provident quae consectetur!
+      </p>
+      <p>
+        Lorem ipsum quis et non doloremque totam hic deleniti aliquam
+        consectetur? Laboriosam harum iusto dolor doloribus ratione, ipsam
+        similique tempora provident quae consectetur! dolor sit amet consectetur
+        adipisicing elit. Iure, quis et non doloremque totam hic deleniti
+        aliquam consectetur? Laboriosam harum iusto dolor doloribus ratione,
+        ipsam similique tempora provident quae consectetur!
+      </p>
+    </article>
+    <article class="featured">
+      <h2>Article Two Here (featured)</h2>
+      <div><em>by:</em> <span>Peter</span></div>
+      <div><em>date:</em> <span>5th Oct</span></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+        culpa suscipit sed laborum maiores consectetur ad vel facilis quis et
+        beatae incidunt enim perferendis id dolor, quia laudantium hic! dolor
+        sit amet consectetur adipisicing elit. Iure, quis et non doloremque
+        totam hic deleniti aliquam consectetur? Laboriosam harum iusto dolor
+        doloribus ratione, ipsam similique tempora provident quae consectetur!
+      </p>
+      <p>
+        Lorem ipsum quis et non doloremque totam hic deleniti aliquam
+        consectetur? Laboriosam harum iusto dolor doloribus ratione, ipsam
+        similique tempora provident quae consectetur! dolor sit amet consectetur
+        adipisicing elit. Iure, quis et non doloremque totam hic deleniti
+        aliquam consectetur? Laboriosam harum iusto dolor doloribus ratione,
+        ipsam similique tempora provident quae consectetur!
+      </p>
+    </article>
+
+    <article>
+      <h2>Article Three Here</h2>
+      <div><em>by:</em> <span>Peter</span></div>
+      <div><em>date:</em> <span>5th Oct</span></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+        culpa suscipit sed laborum maiores consectetur ad vel facilis quis et
+        beatae incidunt enim perferendis id dolor, quia laudantium hic! dolor
+        sit amet consectetur adipisicing elit. Iure, quis et non doloremque
+        totam hic deleniti aliquam consectetur? Laboriosam harum iusto dolor
+        doloribus ratione, ipsam similique tempora provident quae consectetur!
+      </p>
+      <p>
+        Lorem ipsum quis et non doloremque totam hic deleniti aliquam
+        consectetur? Laboriosam harum iusto dolor doloribus ratione, ipsam
+        similique tempora provident quae consectetur! dolor sit amet consectetur
+        adipisicing elit. Iure, quis et non doloremque totam hic deleniti
+        aliquam consectetur? Laboriosam harum iusto dolor doloribus ratione,
+        ipsam similique tempora provident quae consectetur!
+      </p>
+    </article>
+
+    <div class="js-interaction-demo">
+      <h2>Lucky Draw Game (Dynamic HTML)</h2>
+      <p>
+        This part gives demonstration how HTML button clickings trigger
+        JavaScript codes executions and consequently how JavaScript on-the-fly
+        change the web page contents without reloading the page.
+      </p>
+      <div id="lucky-number">?</div>
+      <p><button onclick="play()">Play</button></p>
+      <p>
+        <button onclick="setToSmallFontSize()">Small Font Size</button>
+        <button onclick="setToBigFontSize()">Big Font Size</button>
+      </p>
+      <p>
+        <button onclick="changeToRed()">Red</button>
+        <button onclick="changeToGreen()">Green</button>
+        <button onclick="changeToBlue()">Blue</button>
+      </p>
+    </div>
+
+    <hr />
+    <footer>
+      <p>simple HTML/CSS/JS demo</p>
+    </footer>
+  </body>
+
+  <!-- Java Script Starts -->
+  <script>
+    function play() {
+      luckyNumber = document.querySelector("#lucky-number");
+      n = Math.floor(Math.random() * 100 + 1);
+      console.log("Lucky Number - ", n);
+      luckyNumber.innerText = n;
+    }
+
+    function setToSmallFontSize() {
+      luckyNumber = document.querySelector("#lucky-number");
+      luckyNumber.style.fontSize = "300%";
+    }
+
+    function setToBigFontSize() {
+      luckyNumber = document.querySelector("#lucky-number");
+      luckyNumber.style.fontSize = "800%";
+    }
+
+    function changeToRed() {
+      luckyNumber = document.querySelector("#lucky-number");
+      luckyNumber.style.color = "red";
+    }
+
+    function changeToGreen() {
+      luckyNumber = document.querySelector("#lucky-number");
+      luckyNumber.style.color = "green";
+    }
+
+    function changeToBlue() {
+      luckyNumber = document.querySelector("#lucky-number");
+      luckyNumber.style.color = "blue";
+    }
+  </script>
+  <!-- JavaScript Ends -->
+</html>

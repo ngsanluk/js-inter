@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Apache eCharts Demo</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"
+      type="text/javascript"
+    ></script>
+    <style>
+      #main,
+      #second {
+        border: solid 1px grey;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      |
+      <a href="./js_syntax.html">JavaScript Syntax</a>
+      |
+      <a href="./apache_echarts_demo.html">Apache eCharts demo 1</a>
+      |
+      <a href="./apache_echarts_demo_2.html"
+        >Apache eCharts demo 2 (Dynamic Data)</a
+      >
+      |
+      <a href="./google_charts_demo.html">Google Charts demo</a>
+    </nav>
+    <br /><br />
+    <div id="main" style="width: 800px; height: 400px"></div>
+    <script type="text/javascript">
+      // based on prepared DOM, initialize echarts instance
+      var myChart = echarts.init(document.getElementById("main"));
+
+      apiURL =
+        "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc";
+
+      fetch(apiURL)
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          // console.log("\n=== JSON Response ===");
+          // console.log(json);
+          records = json.weatherForecast;
+          //records.reverse();
+          //console.log(records);
+
+          dates = records.map((item) => item.forecastDate);
+          console.log(dates);
+
+          forecastMaxtemp = records.map((item) => item.forecastMaxtemp.value);
+          console.log(forecastMaxtemp);
+
+          var option = {
+            title: {
+              text: "Hong Kong 9-Day Weather Forecast",
+            },
+            tooltip: {},
+            legend: {
+              data: ["Max Temperture"],
+            },
+            xAxis: {
+              data: dates,
+            },
+            yAxis: {
+              type: "value",
+              axisLabel: {
+                formatter: "{value} °C",
+              },
+            },
+            series: [
+              {
+                name: "Max Temperture",
+                type: "line",
+                data: forecastMaxtemp,
+              },
+            ],
+          };
+
+          // Display the chart using the configuration items and data just specified.
+          myChart.setOption(option);
+        });
+    </script>
+  </body>
+</html>
